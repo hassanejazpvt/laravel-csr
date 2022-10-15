@@ -16,7 +16,8 @@ class CreateIRepository extends CsrGeneratorCommand
     protected $signature = 'csr:irepository
                             {name : The name of the repository interface to be created}
                             {basename : The name of the repository interface to be created}
-                            {namespace? : The namespace and folder to place the item in}';
+                            {namespace? : The namespace and folder to place the item in}
+                            {model? : Whether to use model or not}';
 
     /**
      * The type of class being generated.

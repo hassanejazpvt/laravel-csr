@@ -59,7 +59,8 @@ class CsrServiceProvider extends LaravelServiceProvider
      */
     private function handleConfigs(): void
     {
-        $configPath = __DIR__ . '/../config/csr.php';
-        $this->publishes([$configPath => config_path('csr.php')], 'laravel-csr');
+        if ($this->app['config']->get('csr') === null) {
+            $this->app['config']->set('csr', require __DIR__ . '/../config/csr.php');
+        }
     }
 }
